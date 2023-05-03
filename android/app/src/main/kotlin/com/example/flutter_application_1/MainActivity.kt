@@ -9,14 +9,14 @@ import io.flutter.embedding.android.FlutterActivity
 import android.app.Activity
 
 
-private const val CHANNEL = "com.blizur.android_sdk_channel"
+private const val BLIZUR_CHANNEL = "com.blizur.android_sdk_channel"
 
 class MainActivity: FlutterActivity() {
   override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
 
         // Set up the MethodChannel
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, BLIZUR_CHANNEL).setMethodCallHandler { call, result ->
             when (call.method) {
                 "initBlizurSDK" -> {
                     val apiKey = call.argument<String>("apiKey")
