@@ -10,7 +10,7 @@ To integrate blizur android sdk follow below steps in your flutter project:
 
 2. Add the following lines at the end of the dependencies block in the build.gradle file.
   ```
-    implementation 'com.github.srinusonly:blizur-android-sdk:1.0.6'
+    implementation 'com.github.srinusonly:blizur-android-sdk:1.0.7'
   ```
 3. Navigate to the `android` folder inside the Flutter project and open the `android/build.gradle` file.
 
