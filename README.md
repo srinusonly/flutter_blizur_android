@@ -1,6 +1,6 @@
-# flutter_application_1
+# Flutter Blizur Anrdoid Integration
 
-A new Flutter project.
+A new Flutter project with Blizur Android SDK integration
 
 ## Getting Started
 
