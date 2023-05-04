@@ -1,3 +1,4 @@
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,7 +16,9 @@ void initBlizurSDK(String apiKey, String apiSecret) async {
 }
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  initBlizurSDK("3ChPmDazQAddyPBcZeGkTG7", "ff3d0ddb7015528bb54c3535e48ff4225");
+  if (Platform.isAndroid) {
+    initBlizurSDK("3ChPmDazQAddyPBcZeGkTG7", "ff3d0ddb7015528bb54c3535e48ff4225");
+  }
   runApp(const MyApp());
 }
 
