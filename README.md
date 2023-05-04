@@ -74,6 +74,7 @@ Make sure to remove any duplicate import files.
 8. Finally, call this method from your Flutter Dart code (main.dart) using the MethodChannel.invokeMethod() method:
 a. import required packages
   ```
+  import 'dart:io' show Platform;
   import 'package:flutter/material.dart';
   import 'package:flutter/services.dart';
 
@@ -99,12 +100,15 @@ d. call initBlizurSDK method in main method like below, make sure that `WidgetsF
 
   ```
     WidgetsFlutterBinding.ensureInitialized();
-    initBlizurSDK(<apiKey>, <secret>);
+    if (Platform.isAndroid) {
+      initBlizurSDK(<API_KEY>, <SECRET>);
+    }
   ```
 
   finally main.dart file should be like the below:
 
   ```
+    import 'dart:io' show Platform;
     import 'package:flutter/material.dart';
     import 'package:flutter/services.dart';
 
@@ -122,7 +126,9 @@ d. call initBlizurSDK method in main method like below, make sure that `WidgetsF
     }
     void main() {
       WidgetsFlutterBinding.ensureInitialized();
-      initBlizurSDK(<apiKey>, <secret>);
+      if (Platform.isAndroid) {
+        initBlizurSDK(<API_KEY>, <SECRET>);
+      }
       runApp(const MyApp());
     }
   ```
